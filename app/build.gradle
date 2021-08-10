@@ -5,12 +5,13 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 30
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.example.tetris"
-        minSdk 21
-        targetSdk 31
+        minSdkVersion 19
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 

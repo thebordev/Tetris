@@ -18,10 +18,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
 
-        val btnNewGame: Button = findViewById<Button>(R.id.btn_new_game)
-        val btnResetScore: Button = findViewById<Button>(R.id.btn_reset_score)
-        val btnExit: Button = findViewById<Button>(R.id.btn_exit)
-        tvHighScore = findViewById<TextView>(R.id.tv_high_score)
+        val btnNewGame: Button = findViewById(R.id.btn_new_game)
+        val btnResetScore: Button = findViewById(R.id.btn_reset_score)
+        val btnExit: Button = findViewById(R.id.btn_exit)
+        tvHighScore = findViewById(R.id.tv_high_score)
 
         btnNewGame.setOnClickListener(this::startGame)
         btnResetScore.setOnClickListener(this::resetScore)
