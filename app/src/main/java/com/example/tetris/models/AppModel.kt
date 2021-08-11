@@ -4,11 +4,12 @@ import android.graphics.Point
 import com.example.tetris.constants.CellConstants
 import com.example.tetris.constants.FieldConstants
 import com.example.tetris.helper.array2dOfByte
-import com.example.tetris.storage.AppPreference
+import com.example.tetris.storage.AppPreferences
 
 class AppModel {
+
     var score: Int = 0
-    private var preferences: AppPreference? = null
+    private var preferences: AppPreferences? = null
 
     var currentBlock: Block? = null
     var currentState: String = Statuses.AWAITING_START.name
@@ -18,7 +19,7 @@ class AppModel {
         FieldConstants.COLUMN_COUNT.value
     )
 
-    fun setPreferences(preferences: AppPreference?) {
+    fun setPreferences(preferences: AppPreferences?) {
         this.preferences = preferences
     }
 
@@ -46,8 +47,9 @@ class AppModel {
 
     private fun boostScore() {
         score += 10
-        if (score > preferences?.getHighScore() as Int)
+        if (score > preferences?.getHighScore() as Int) {
             preferences?.saveHighScore(score)
+        }
     }
 
     private fun generateNextBlock() {
@@ -229,16 +231,10 @@ class AppModel {
     }
 
     enum class Statuses {
-        AWAITING_START,
-        ACTIVE,
-        INACTIVE,
-        OVER
+        AWAITING_START, ACTIVE, INACTIVE, OVER
     }
 
     enum class Motions {
-        LEFT,
-        RIGHT,
-        DOWN,
-        ROTATE
+        LEFT, RIGHT, DOWN, ROTATE
     }
 }

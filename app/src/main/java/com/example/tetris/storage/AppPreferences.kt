@@ -3,7 +3,7 @@ package com.example.tetris.storage
 import android.content.Context
 import android.content.SharedPreferences
 
-class AppPreference(ctx: Context) {
+class AppPreferences(ctx: Context) {
 
     var data: SharedPreferences = ctx.getSharedPreferences("APP_PREFERENCES", Context.MODE_PRIVATE)
 

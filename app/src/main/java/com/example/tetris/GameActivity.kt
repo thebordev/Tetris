@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import com.example.tetris.models.AppModel
-import com.example.tetris.storage.AppPreference
+import com.example.tetris.storage.AppPreferences
 import com.example.tetris.view.TetrisView
 
 class GameActivity : AppCompatActivity() {
@@ -16,13 +16,13 @@ class GameActivity : AppCompatActivity() {
     var tvCurrentScore: TextView? = null
 
     private lateinit var tetrisView: TetrisView
-    var appPreferences: AppPreference? = null
+    var appPreferences: AppPreferences? = null
     private val appModel: AppModel = AppModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
-        appPreferences = AppPreference(this)
+        appPreferences = AppPreferences(this)
         appModel.setPreferences(appPreferences)
 
         val btnRestart = findViewById<Button>(R.id.btn_restart)

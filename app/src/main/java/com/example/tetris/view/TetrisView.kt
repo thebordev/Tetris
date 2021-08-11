@@ -6,12 +6,12 @@ import android.os.Message
 import android.util.AttributeSet
 import android.view.View
 import android.widget.Toast
+import android.os.Handler
 import com.example.tetris.GameActivity
 import com.example.tetris.constants.CellConstants
 import com.example.tetris.constants.FieldConstants
 import com.example.tetris.models.AppModel
 import com.example.tetris.models.Block
-import java.util.logging.Handler
 
 class TetrisView: View {
 
@@ -124,7 +124,7 @@ class TetrisView: View {
         this.frameOffset = Dimension(offsetX, offsetY)
     }
 
-    private class ViewHandler(private val owner: TetrisView): android.os.Handler() {
+    private class ViewHandler(private val owner: TetrisView): Handler() {
         override fun handleMessage(message: Message) {
             if (message.what == 0) {
                 if (owner.model != null) {
